@@ -95,6 +95,7 @@ a:hover{
 .product-name{
     font-size: 2rem;
     font-weight: bold;
+    
 }
 
 .product-brand{
@@ -116,3 +117,38 @@ a:hover{
     max-height: 34rem;
 }
 
+/* Sidebar */
+
+.brand button{
+    font-size: 3rem;
+    padding: .5rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+}
+
+.sidebar{
+    position: fixed;
+    transform: translateX(-30rem);
+    width: 30rem;
+    background-color: #f0f0f0;
+    height: 100%;
+}
+
+.sidebar.open{
+    transform: translateX(0);
+}
+
+.sidebar-close-button{
+    border-radius: 50%;
+    border: .1rem #000000 solid;
+    width: 3rem;
+    height: 3rem;
+    padding: .5rem;
+    padding-top: 0;
+    cursor: pointer;
+    font-size: 2rem;
+    position: absolute;
+    right: .5rem;
+    top: 1.5rem;
+}
