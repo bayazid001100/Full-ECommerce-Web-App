@@ -1,5 +1,9 @@
 import React from 'react';
 import './App.css';
+import ProductScreen from './Screens/ProductScreen';
+import HomeScreen from './Screens/HomeScreen';
+import {BrowserRouter, Route, Link} from "react-router-dom";
+
 
 function App() {
 
@@ -11,13 +15,14 @@ function App() {
     };
 
   return (
+    <BrowserRouter>
     <div className="grid-container">
             <header className="header">
                 <div className="brand">
                     <button onClick={openMenu}>
                         &#9776;
                     </button>
-                    <a href="index.html">amazona</a>
+                    <Link to="/">amazona</Link>
                 </div>
                 <div className="header-links">
                     <a href="cart.html">Cart</a>
@@ -41,91 +46,16 @@ function App() {
             
             <main className="main">
                 <div className="content">
-                    <ul className="products">
-                        <li> 
-                            <div className="product">
-                                <img className="product-image" src="/images/dl.jpg" alt="product"/>
-                                <div className="product-name">
-                                    <a href="product.html">Slim Shirt</a>
-                                </div>
-                                <div className="product-brand">Nike</div>
-                                <div className="product-price">$60</div>
-                                <div className="product-rating">4.5 stars (10 Reviews)</div>
-                            </div>
-                        </li>
-                        <li> 
-                            <div className="product">
-                                <img className="product-image" src="/images/dl.jpg" alt="product"/>
-                                <div className="product-name">
-                                    <a href="product.html">Slim Shirt</a>
-                                </div>
-                                <div className="product-brand">Nike</div>
-                                <div className="product-price">$60</div>
-                                <div className="product-rating">4.5 stars (10 Reviews)</div>
-                            </div>
-                        </li>
-                        <li> 
-                            <div className="product">
-                                <img className="product-image" src="/images/dl.jpg" alt="product"/>
-                                <div className="product-name">
-                                    <a href="product.html">Slim Shirt</a>
-                                </div>
-                                <div className="product-brand">Nike</div>
-                                <div className="product-price">$60</div>
-                                <div className="product-rating">4.5 stars (10 Reviews)</div>
-                            </div>
-                        </li>
-                        <li> 
-                            <div className="product">
-                                <img className="product-image" src="/images/dl.jpg" alt="product"/>
-                                <div className="product-name">
-                                    <a href="product.html">Slim Shirt</a>
-                                </div>
-                                <div className="product-brand">Nike</div>
-                                <div className="product-price">$60</div>
-                                <div className="product-rating">4.5 stars (10 Reviews)</div>
-                            </div>
-                        </li>
-                        <li> 
-                            <div className="product">
-                                <img className="product-image" src="/images/dl.jpg" alt="product"/>
-                                <div className="product-name">
-                                    <a href="product.html">Slim Shirt</a>
-                                </div>
-                                <div className="product-brand">Nike</div>
-                                <div className="product-price">$60</div>
-                                <div className="product-rating">4.5 stars (10 Reviews)</div>
-                            </div>
-                        </li>
-                        <li> 
-                            <div className="product">
-                                <img className="product-image" src="/images/dl.jpg" alt="product"/>
-                                <div className="product-name">
-                                    <a href="product.html">Slim Shirt</a>
-                                </div>
-                                <div className="product-brand">Nike</div>
-                                <div className="product-price">$60</div>
-                                <div className="product-rating">4.5 stars (10 Reviews)</div>
-                            </div>
-                        </li>
-                        <li> 
-                            <div className="product">
-                                <img className="product-image" src="/images/dl.jpg" alt="product"/>
-                                <div className="product-name">
-                                    <a href="product.html">Slim Shirt</a>
-                                </div>
-                                <div className="product-brand">Nike</div>
-                                <div className="product-price">$60</div>
-                                <div className="product-rating">4.5 stars (10 Reviews)</div>
-                            </div>
-                        </li>
-                    </ul>
+                  <Route path="/product/:id" component={ProductScreen}></Route>
+                  <Route path="/" exact={true} component={HomeScreen}></Route>
+                    
                 </div>
             </main>
             <footer className="footer">
                 All right reserved
             </footer>
         </div>
+        </BrowserRouter>
   );
 }
 
