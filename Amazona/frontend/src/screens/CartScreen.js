@@ -24,6 +24,8 @@ function CartScreen(props) {
     props.history.push("/signin?redirect=shipping");
   }
 
+  console.log(cartItems);
+
   return <div className="cart">
     <div className="cart-list">
       <ul className="cart-list-container">
@@ -56,7 +58,7 @@ function CartScreen(props) {
                   <div>
                     Qty:
                   <select value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
-                      {[...Array(item.countInStock).keys()].map(x =>
+                      {[...Array(item.qty).keys()].map(x =>
                         <option key={x + 1} value={x + 1}>{x + 1}</option>
                       )}
                     </select>
